@@ -9,7 +9,7 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
 	<Router>
 		<Routes>
-			<Route path='/gmaps' element={<GMaps />} />
+			{/* <Route path='/gmaps' element={<GMaps />} /> */}
 			<Route path='/' element={<App />} />
 		</Routes>
 	</Router>

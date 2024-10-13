@@ -45,7 +45,7 @@ export default function App() {
 		axios
 			.get('http://api.openweathermap.org/geo/1.0/direct', {
 				params: {
-					q: refresh ? location.name : document.getElementById('location').value,
+					q: document.getElementById('location').value,
 					appid: import.meta.env.VITE_OW_API_KEY,
 					lang: 'en',
 					units: 'metric',
