@@ -108,8 +108,8 @@ export default function App() {
 
 	return (
 		<div className='relative flex flex-col items-center pb-8 w-screen text-white'>
-			<h1></h1>
-			<form className='flex flex-col items-center m-4 w-1/2 max-lg:w-2/3' onSubmit={findLocation}>
+			<h1 className='my-4 font-bold text-5xl'>Počasí</h1>
+			<form className='flex flex-col items-center my-2 w-1/2 max-sm:w-[90%] max-lg:w-2/3' onSubmit={findLocation}>
 				<h2 className='mb-2 text-xl'>Hledat město</h2>
 				<div className='flex w-full'>
 					<input autoFocus id='location' placeholder='Zadej lokaci' className='flex-grow border-neutral-600 bg-neutral-700 p-2 border border-r-0 rounded-l-xl rounded-r-none text-gray-300 caret-gray-400 outline-none' type='text' />
@@ -119,8 +119,8 @@ export default function App() {
 			<form className='flex flex-col items-center m-4 w-1/2 max-lg:w-2/3' onSubmit={findCoords}>
 				<h2 className='mb-2 text-xl'>Hledat podle souřadnic</h2>
 				<div className='flex my-4 w-full'>
-					<input id='lat' placeholder='Zeměpisná šířka' className='border-neutral-600 bg-neutral-700 mx-2 p-2 border rounded-xl w-1/2 text-gray-300 caret-gray-400 outline-none' type='text' />
-					<input id='lon' placeholder='Zeměpisná délka' className='border-neutral-600 bg-neutral-700 mx-2 p-2 border rounded-xl w-1/2 text-gray-300 caret-gray-400 outline-none' type='text' />
+					<input id='lat' placeholder='Z. šířka' className='border-neutral-600 bg-neutral-700 mx-2 p-2 border rounded-xl w-1/2 text-gray-300 caret-gray-400 outline-none' type='text' />
+					<input id='lon' placeholder='Z. délka' className='border-neutral-600 bg-neutral-700 mx-2 p-2 border rounded-xl w-1/2 text-gray-300 caret-gray-400 outline-none' type='text' />
 				</div>
 				<button className='bg-blue-500 py-2 border border-blue-500 rounded-xl w-full font-semibold'>Najít</button>
 			</form>
