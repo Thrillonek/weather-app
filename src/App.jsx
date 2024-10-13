@@ -7,6 +7,16 @@ export default function App() {
 	const [error, setError] = useState();
 
 	useEffect(() => {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				(pos) => console.log(null, pos.coords.latitude, pos.coords.longitude),
+				(err) => console.log(err),
+				{ enableHighAccuracy: true }
+			);
+		}
+	}, []);
+
+	useEffect(() => {
 		fetchData();
 	}, [location]);
 
@@ -61,10 +71,10 @@ export default function App() {
 			});
 	}
 
-	function findCoords(e) {
-		e.preventDefault();
-		const lat = document.getElementById('lat').value;
-		const lon = document.getElementById('lon').value;
+	function findCoords(e, lat, lon) {
+		if (e) e.preventDefault();
+		if (!lat) lat = document.getElementById('lat').value;
+		if (!lon) lon || document.getElementById('lon').value;
 
 		axios
 			.get('http://api.openweathermap.org/geo/1.0/reverse', {
@@ -78,6 +88,7 @@ export default function App() {
 				if (!res.data[0]) return setLocation({ lat, lon });
 
 				let { name, country } = res.data[0];
+				if (res.data[0].local_names?.cs) name = res.data[0].local_names.cs;
 
 				setLocation({ lat, lon, country, name });
 			})
