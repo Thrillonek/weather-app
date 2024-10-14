@@ -14,6 +14,7 @@ export default function App() {
 				{ enableHighAccuracy: true }
 			);
 		}
+		console.log(import.meta.env.TEST);
 	}, []);
 
 	useEffect(() => {
