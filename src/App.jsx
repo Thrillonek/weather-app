@@ -9,7 +9,7 @@ export default function App() {
 	useEffect(() => {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
-				(pos) => console.log(null, pos.coords.latitude, pos.coords.longitude),
+				(pos) => findCoords(null, pos.coords.latitude, pos.coords.longitude),
 				(err) => console.log(err),
 				{ enableHighAccuracy: true }
 			);
@@ -74,7 +74,7 @@ export default function App() {
 	function findCoords(e, lat, lon) {
 		if (e) e.preventDefault();
 		if (!lat) lat = document.getElementById('lat').value;
-		if (!lon) lon || document.getElementById('lon').value;
+		if (!lon) lon = document.getElementById('lon').value;
 
 		axios
 			.get('http://api.openweathermap.org/geo/1.0/reverse', {
