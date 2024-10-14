@@ -53,7 +53,7 @@ export default function App() {
 	function findLocation(e) {
 		e.preventDefault();
 		axios
-			.get('http://api.openweathermap.org/geo/1.0/direct', {
+			.get('https://api.openweathermap.org/geo/1.0/direct', {
 				params: {
 					q: document.getElementById('location').value,
 					appid: import.meta.env.VITE_OW_API_KEY,
@@ -77,7 +77,7 @@ export default function App() {
 		if (!lon) lon = document.getElementById('lon').value;
 
 		axios
-			.get('http://api.openweathermap.org/geo/1.0/reverse', {
+			.get('https://api.openweathermap.org/geo/1.0/reverse', {
 				params: {
 					lat,
 					lon,
