@@ -182,7 +182,7 @@ export default function App() {
 					</button> */}
 				</div>
 				{data?.list && (
-					<div className='flex flex-wrap justify-center mb-4 md:w-1/2'>
+					<div className='flex flex-wrap justify-center mb-8 md:w-1/2'>
 						{data.list.map((item, idx) => {
 							let time = new Date(item.dt * 1000);
 							let weekdays = ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'];
