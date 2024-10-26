@@ -197,7 +197,7 @@ export default function App() {
 				)}
 				{location && (
 					<div className='relative flex items-center'>
-						<h1 className='font-bold text-5xl text-center'>{location.name ? `${location.name} (${location.country})` : 'Neznámá lokace'}</h1>
+						<h1 className='font-bold max-sm:text-4xl text-5xl text-center'>{location.name ? `${location.name} (${location.country})` : 'Neznámá lokace'}</h1>
 						<button className='-right-12 absolute px-1' onClick={(e) => fetchData(true)}>
 							<i id='refresh-btn' className='text-2xl fa-arrows-rotate fa-solid'></i>
 						</button>
